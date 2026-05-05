@@ -46,7 +46,7 @@ const StudentDashboard = () => {
     const fetchDashboardData = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/students/dashboard', {
+            const res = await axios.get('https://smart-attendance-system-q81s.onrender.com/api/students/dashboard', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setData(res.data);
@@ -114,7 +114,7 @@ const handleFaceAction = async () => {
             faceDescriptor: descriptor // Change this key name
         };
         
-        await axios.post(`http://localhost:5000${endpoint}`, payload, {
+        await axios.post(`https://smart-attendance-system-q81s.onrender.com${endpoint}`, payload, {
             headers: { Authorization: `Bearer ${token}` }
         });
         

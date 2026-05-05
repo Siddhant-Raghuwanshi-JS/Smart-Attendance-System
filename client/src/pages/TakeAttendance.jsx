@@ -16,7 +16,7 @@ const TakeAttendance = () => {
     const fetchAttendanceStatus = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:5000/api/faculty/daily-report?date=${today}`);
+            const { data } = await axios.get(`https://smart-attendance-system-q81s.onrender.com/api/faculty/daily-report?date=${today}`);
             setStudents(data.data || []);
             setLoading(false);
         } catch (err) {
@@ -31,7 +31,7 @@ const TakeAttendance = () => {
         const newStatus = currentStatus === 'Present' ? 'Absent' : 'Present';
         setUpdating(userId);
         try {
-            await axios.post('http://localhost:5000/api/faculty/mark-manual', {
+            await axios.post('https://smart-attendance-system-q81s.onrender.com/api/faculty/mark-manual', {
                 userId,
                 status: newStatus
             });

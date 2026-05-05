@@ -10,8 +10,8 @@ import {
     ArrowDownTrayIcon // Download icon
 } from '@heroicons/react/24/outline';
 
-const REPORT_API_URL = 'http://localhost:5000/api/reports/dashboard';
-const DAILY_REPORT_API = 'http://localhost:5000/api/faculty/daily-report';
+const REPORT_API_URL = 'https://smart-attendance-system-q81s.onrender.com/api/reports/dashboard';
+const DAILY_REPORT_API = 'https://smart-attendance-system-q81s.onrender.com/api/faculty/daily-report';
 
 const StatCard = ({ icon: Icon, title, value, color, borderColor }) => (
     <div style={{ 

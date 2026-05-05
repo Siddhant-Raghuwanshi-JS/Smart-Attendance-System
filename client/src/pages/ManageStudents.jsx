@@ -18,7 +18,7 @@ const ManageStudents = () => {
         try {
             setLoading(true);
             // Fetching all students from the new endpoint
-            const { data } = await axios.get('http://localhost:5000/api/faculty/class-list');
+            const { data } = await axios.get('https://smart-attendance-system-q81s.onrender.com/api/faculty/class-list');
             if (data.success) {
                 setStudents(data.data);
             }
@@ -36,9 +36,8 @@ const ManageStudents = () => {
     const handleDelete = async (id) => {
     if (window.confirm('Delete this student permanently?')) {
         try {
-            // Sahi URL: http://localhost:5000/api/students/${id}
-            // Purana wala '/api/auth/student/' galat tha
-            await axios.delete(`http://localhost:5000/api/students/${id}`);
+            
+            await axios.delete(`https://smart-attendance-system-q81s.onrender.com/api/students/${id}`);
             
             alert('Student removed successfully!');
             fetchStudents(); // List refresh karne ke liye
