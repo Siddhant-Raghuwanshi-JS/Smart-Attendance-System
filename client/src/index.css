@@ -1,0 +1,756 @@
+/* client/src/index.css */
+
+/* Basic Reset for the dark theme */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #111827; /* Dark gray background */
+    color: white;
+}
+
+/* Global Styling for the Login Page */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 448px; /* Equivalent to max-w-md (448px) */
+    padding: 32px; /* Equivalent to p-8 */
+    margin: 0 16px; /* Add some horizontal margin for smaller screens */
+    background-color: #1e2952; /* Equivalent to bg-[#1e2952] */
+    border-radius: 12px; /* Equivalent to rounded-xl */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4); /* Custom shadow */
+    border: 1px solid #4f46e5; /* Equivalent to border-indigo-800 */
+}
+
+/* Input and Form Styling */
+.input-group {
+    position: absolute;
+    margin-bottom: 16px; /* Equivalent to mb-4 */
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 15px; /* Adjust spacing */
+    border-radius: 6px;
+    background-color: #374151; /* Dark input background */
+    border: 1px solid #4b5563;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.auth-input:focus {
+    border-color: #4f46e5; /* Indigo focus color */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+}
+
+/* Button Styling */
+.auth-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: #4f46e5; /* Equivalent to bg-indigo-600 */
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.auth-button:hover:not(:disabled) {
+    background-color: #4338ca; /* Equivalent to hover:bg-indigo-700 */
+}
+
+.auth-button:disabled {
+    background-color: #818cf8; /* Equivalent to bg-indigo-400 */
+    cursor: not-allowed;
+}
+
+/* Icon Positioning */
+.icon-absolute {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    height: 20px;
+    width: 20px;
+    color: #a5b4fc; /* Equivalent to text-indigo-400 */
+    z-index: 2;
+}
+
+.error-message {
+    padding: 8px;
+    font-size: 0.875rem;
+    color: #f87171; /* red-400 */
+    background-color: rgba(127, 29, 29, 0.5); /* red-900/50 */
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+
+/* client/src/index.css (Append these styles) */
+
+/* --- Dashboard Specific Styles --- */
+
+.dashboard-layout {
+    padding: 32px;
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+@media (min-width: 1024px) {
+    .grid-3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card-base {
+    padding: 24px;
+    border-radius: 16px;
+    background-color: #1e2952;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(79, 70, 229, 0.3); /* indigo-800/50 */
+}
+
+.card-title-lg {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* Activity Feed Styles */
+.feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 384px; /* max-h-96 */
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.feed-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #161d36;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.feed-item:hover {
+    background-color: #1e2952;
+}
+
+/* Helper styles for utility classes used in components */
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.space-x-2 > * + * { margin-left: 8px; }
+.space-y-3 > * + * { margin-top: 12px; }
+.w-5 { width: 20px; }
+.h-5 { height: 20px; }
+.mr-3 { margin-right: 12px; }
+.mt-4 { margin-top: 16px; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.text-white { color: white; }
+.text-indigo-400 { color: #a5b4fc; }
+.text-indigo-500 { color: #818cf8; }
+.text-green-400 { color: #4ade80; }
+.text-yellow-400 { color: #facc15; }
+.text-red-400 { color: #f87171; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.mb-4 { margin-bottom: 16px; }
+.mb-8 { margin-bottom: 32px; }
+.mt-8 { margin-top: 32px; }
+
+
+
+/* client/src/index.css (Append these styles) */
+
+/* --- Take Attendance Page Styles --- */
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.card-title-sm {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.attendance-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 parts for video, 1 part for controls */
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.video-card {
+    position: relative;
+    background-color: #1e2952;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.webcam-feed {
+    width: 100%;
+    min-height: 400px;
+    background-color: #0f172a;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s;
+}
+
+.overlay-text, .overlay-text-active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #a5b4fc; /* indigo-400 */
+}
+
+.overlay-text-active {
+    color: #facc15; /* yellow-400 */
+    border: 2px solid #facc15;
+}
+
+.controls-card {
+    background-color: #1e2952;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.control-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 16px;
+    background-color: #161d36;
+    border-radius: 8px;
+    flex-grow: 1;
+    margin: 0 8px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #a5b4fc;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: auto; /* Push buttons to the bottom */
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.start-btn { background-color: #4ade80; /* green-400 */ }
+.start-btn:hover { background-color: #22c55e; }
+
+.stop-btn { background-color: #ef4444; /* red-500 */ }
+.stop-btn:hover { background-color: #dc2626; }
+
+.pause-btn { background-color: #facc15; /* yellow-400 */ }
+.pause-btn:hover { background-color: #eab308; }
+
+.resume-btn { background-color: #2563eb; /* blue-600 */ }
+.resume-btn:hover { background-color: #1d4ed8; }
+
+.enroll-btn { background-color: #4f46e5; /* indigo-600 */ }
+.enroll-btn:hover { background-color: #4338ca; }
+
+.log-card {
+    background-color: #1e2952;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.log-output {
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #161d36;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 900px) {
+    .attendance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* client/src/index.css - REPLACED/UPDATED STYLES */
+
+/* --- Layout and Sidebar Styles (Refined) --- */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Container */
+.sidebar-container {
+    width: 220px; /* SLIGHTLY NARROWER */
+    background-color: #1f2937; /* Darker Slate Gray */
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #374151; /* Subtle border */
+    padding: 16px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    padding: 30px; /* Increased padding */
+    background-color: #111827; /* Main Dark Background */
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+}
+
+/* Logo/Header Section */
+.logo-section {
+    padding: 0 16px 24px 16px;
+    border-bottom: 1px solid #374151;
+}
+
+.logo-text {
+    font-size: 1.4rem; /* Slightly smaller */
+    font-weight: 700;
+    color: #4ade80; /* Brighter Green Accent */
+}
+
+/* Navigation Menu */
+.nav-menu {
+    flex-grow: 1;
+    padding: 16px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    margin: 4px 8px; /* Slightly tighter margins */
+    border-radius: 6px;
+    text-decoration: none;
+    color: #9ca3af; /* Gray Text for inactive links */
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover {
+    background-color: #374151; /* Lighter background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Active Navigation Item */
+.nav-item-active {
+    background-color: #4f46e5; /* Primary Indigo Blue */
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.4);
+}
+
+.nav-icon {
+    width: 20px; /* FIXED ICON SIZE */
+    height: 20px;
+    margin-right: 12px;
+    color: inherit; /* Inherit color from parent (white for active, gray for inactive) */
+}
+
+.nav-item:not(.nav-item-active) .nav-icon {
+    color: #6b7280; /* Specific color for inactive icons */
+}
+
+/* Logout Section */
+.logout-section {
+    padding: 16px;
+    border-top: 1px solid #374151;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    background: none;
+    border: 1px solid #dc2626; /* Red border */
+    color: #f87171; /* Red text */
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #dc2626;
+    color: white;
+}
+
+/* client/src/index.css (Append these styles) */
+
+/* --- Student Management Styles --- */
+
+.table-container {
+    background-color: #1e2952;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table th, .student-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #374151; /* Darker line */
+}
+
+.student-table th {
+    background-color: #1f2937;
+    color: #9ca3af;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.student-table td {
+    color: white;
+    font-size: 0.95rem;
+}
+
+.student-table tbody tr:hover {
+    background-color: #2c3a4d;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-enrolled {
+    background-color: rgba(76, 175, 80, 0.2); /* Green */
+    color: #4ade80;
+}
+
+.status-pending {
+    background-color: rgba(255, 152, 0, 0.2); /* Orange */
+    color: #facc15;
+}
+
+/* Add Button */
+.add-student-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #4ade80;
+    color: #111827;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.add-student-btn:hover {
+    background-color: #22c55e;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ef4444; /* Red */
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+.delete-btn:hover {
+    color: #dc2626;
+}
+
+
+/* --- Modal Styles --- */
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.modal-content {
+    background-color: #1e2952;
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #4f46e5;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-modal-btn:hover {
+    color: white;
+}
+
+/* client/src/index.css (Append these styles) */
+
+/* --- Dashboard Styles --- */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card.bg-blue-800\/50 { background-color: rgba(30, 64, 175, 0.5); }
+.stat-card.border-blue-600 { border-color: #2563eb; }
+
+.stat-card.bg-green-800\/50 { background-color: rgba(4, 120, 87, 0.5); }
+.stat-card.border-green-600 { border-color: #10b981; }
+
+.stat-card.bg-yellow-800\/50 { background-color: rgba(180, 83, 9, 0.5); }
+.stat-card.border-yellow-600 { border-color: #f59e0b; }
+
+.stat-card.bg-indigo-800\/50 { background-color: rgba(67, 56, 202, 0.5); }
+.stat-card.border-indigo-600 { border-color: #4f46e5; }
+
+
+.stat-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #9ca3af;
+    text-transform: uppercase;
+}
+
+.stat-value-lg {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 10px;
+}
+
+.stat-icon {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+/* Registration Page Styles */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a; /* Dark navy background */
+    padding: 20px;
+}
+
+.register-card {
+    background: #1e293b; /* Slightly lighter navy */
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #334155;
+}
+
+.register-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    color: #a5b4fc;
+    margin-bottom: 30px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling the input groups to match Login */
+.register-input-group {
+    position: relative;
+}
+
+.register-input {
+    width: 100%;
+    background: #334155;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.register-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.register-select {
+    width: 100%;
+    background: #334155;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.register-button {
+    width: 100%;
+    background: #6366f1;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background: #4f46e5;
+}
+
+.register-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: #a5b4fc;
+}
+
+.register-link {
+    color: #4ade80;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.custom-calendar {
+    background: transparent !important;
+    border: none !important;
+    color: white !important;
+    width: 100% !important;
+}
+.react-calendar__tile--now {
+    background: #6366f1 !important;
+    border-radius: 6px;
+    color: white !important;
+}
+.react-calendar__navigation button {
+    color: white !important;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #475569 !important;
+}
