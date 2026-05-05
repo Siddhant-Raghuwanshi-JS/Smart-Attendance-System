@@ -7,7 +7,7 @@ import {
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5000/api/auth/';
+const API_URL = 'https://smart-attendance-system-q81s.onrender.com/api/auth/';
 
 const Register = () => {
     // Initial state mein sari fields pre-defined rakhte hain

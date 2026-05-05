@@ -3,7 +3,7 @@ import { LockClosedIcon, AtSymbolIcon } from '@heroicons/react/24/outline';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-const API_URL = 'http://smart-attendance-system-q81s.onrender.com/api/auth/';
+const API_URL = 'https://smart-attendance-system-q81s.onrender.com/api/auth/';
 
 const Login = () => {
     const [email, setEmail] = useState('');
